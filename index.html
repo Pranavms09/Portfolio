@@ -96,7 +96,7 @@
 
       h2::after {
         content: "";
-        width: 60px;
+        width: 130px;
         height: 3px;
         background: var(--primary);
         display: block;
@@ -114,9 +114,19 @@
       .skills-list,
       .project-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         margin-top: 2rem;
+      }
+
+      .project-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .project-link .card {
+        cursor: pointer;
       }
 
       .card {
@@ -236,13 +246,35 @@
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       }
 
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 1.8rem;
-        }
+      /* ===== Mobile Responsiveness Fix ===== */
+      @media (max-width: 600px) {
+        /* Stack navigation nicely */
         nav {
           flex-wrap: wrap;
           gap: 1rem;
+        }
+
+        /* Force single column on mobile */
+        .skills-list,
+        .project-list {
+          grid-template-columns: 1fr;
+        }
+
+        /* Improve card spacing */
+        .card {
+          padding: 1.3rem;
+        }
+
+        header h1 {
+          font-size: 1.7rem;
+        }
+
+        header p {
+          font-size: 1rem;
+        }
+
+        .about p {
+          font-size: 1rem;
         }
       }
     </style>
@@ -287,7 +319,7 @@
         </div>
         <div class="card">
           <h3>Web Development</h3>
-          <p>HTML, CSS, JavaScript(Learning)</p>
+          <p>HTML, CSS, JavaScript</p>
         </div>
         <div class="card">
           <h3>Git & GitHub</h3>
@@ -301,22 +333,44 @@
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>Project Links</h2>
       <div class="project-list">
-        <div class="card">
-          <h3>Portfolio Website</h3>
-          <p>
-            A personal website showcasing my skills, projects, and contact
-            details.
-          </p>
-        </div>
-        <div class="card">
-          <h3>{Codes_And_Bugs}</h3>
-          <p>
-            Working on an AI-based tool that explains DSA questions in simple
-            English for learners.
-          </p>
-        </div>
+        <a
+          href="https://pranavms09.github.io/Krishi_Mitra/"
+          target="_blank"
+          class="project-link"
+        >
+          <div class="card">
+            <h3>Krishi_Mitra - TechFiesta Project</h3>
+            <p>
+              An agriculture-focused platform that helps farmers compare mandi
+              and buyer prices for better selling decisions.
+            </p>
+          </div>
+        </a>
+        <a href="#" class="project-link">
+          <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>
+              A personal website showcasing my skills, projects, and contact
+              details.
+            </p>
+          </div>
+        </a>
+
+        <a
+          href="https://www.youtube.com/@Codes_And_Bugs"
+          target="_blank"
+          class="project-link"
+        >
+          <div class="card">
+            <h3>{Codes_And_Bugs}</h3>
+            <p>
+              Working on an AI-based tool that explains DSA questions in simple
+              English for learners.
+            </p>
+          </div>
+        </a>
       </div>
     </section>
 
