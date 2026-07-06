@@ -56,17 +56,24 @@ const education = [
 export default function Experience() {
   return (
     <section className="py-24 border-t-2 border-primary bg-background" id="experience">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
         {/* Experience Column */}
         <div className="lg:col-span-7">
           <h2 className="text-headline-lg uppercase mb-12">Experience &amp; Activities</h2>
-          <div className="relative border-l-2 border-zinc-800 ml-4 pl-8 space-y-12">
+          <div className="relative ml-4 pl-8 space-y-12">
             {experiences.map((exp, i) => (
               <div key={i} className="relative group">
-                {/* Milestone Indicator */}
-                <div className="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full border-2 border-primary bg-background group-hover:bg-primary transition-colors duration-200"></div>
-                
+                {/* Connector line to next item — only between items, not after last */}
+                {i < experiences.length - 1 && (
+                  <div
+                    className="absolute w-0.5 bg-zinc-800"
+                    style={{ left: '-34px', top: '1.375rem', bottom: '-2.625rem' }}
+                  />
+                )}
+                {/* Milestone Dot — on top of line */}
+                <div className="absolute z-10 -left-[41px] top-1.5 w-4 h-4 rounded-full border-2 border-primary bg-background group-hover:bg-primary transition-colors duration-200" />
+
                 {/* Content */}
                 <div className="space-y-2">
                   <div className="font-mono text-label-bold text-zinc-500 uppercase tracking-wider">
@@ -92,12 +99,19 @@ export default function Experience() {
         {/* Education Column */}
         <div className="lg:col-span-5">
           <h2 className="text-headline-lg uppercase mb-12">Education</h2>
-          <div className="relative border-l-2 border-zinc-800 ml-4 pl-8 space-y-12">
+          <div className="relative ml-4 pl-8 space-y-12">
             {education.map((edu, i) => (
               <div key={i} className="relative group">
-                {/* Milestone Indicator */}
-                <div className="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full border-2 border-primary bg-background group-hover:bg-primary transition-colors duration-200"></div>
-                
+                {/* Connector line to next item — only between items, not after last */}
+                {i < education.length - 1 && (
+                  <div
+                    className="absolute w-0.5 bg-zinc-800"
+                    style={{ left: '-34px', top: '1.375rem', bottom: '-2.625rem' }}
+                  />
+                )}
+                {/* Milestone Dot — on top of line */}
+                <div className="absolute z-10 -left-[41px] top-1.5 w-4 h-4 rounded-full border-2 border-primary bg-background group-hover:bg-primary transition-colors duration-200" />
+
                 {/* Content */}
                 <div className="space-y-2">
                   <div className="font-mono text-label-bold text-zinc-500 uppercase tracking-wider">
