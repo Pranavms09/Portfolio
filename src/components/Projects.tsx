@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import ScrollReveal from '@/components/ScrollReveal';
@@ -26,6 +28,8 @@ const projects = [
 ];
 
 export default function Projects() {
+  const [activeCardId, setActiveCardId] = React.useState<number | null>(null);
+
   return (
     <section className="py-24 border-t-2 border-primary bg-background" id="projects">
       <h2 className="text-headline-lg uppercase mb-12">Featured Projects</h2>
@@ -35,7 +39,8 @@ export default function Projects() {
             <div
               key={project.id}
               style={{ '--delay': `${idx * 150}ms` } as React.CSSProperties}
-              className="group neo-border bg-background neo-shadow neo-card-hover"
+              className="group neo-border bg-background neo-shadow neo-card-hover cursor-pointer"
+              onClick={() => setActiveCardId(activeCardId === project.id ? null : project.id)}
             >
               <div className="h-48 overflow-hidden border-b-2 border-primary relative">
                 <Image
@@ -44,7 +49,11 @@ export default function Projects() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   priority={project.id === 2}
-                  className="object-cover grayscale brightness-75 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                  className={`object-cover transition-all duration-300 group-hover:scale-105 ${
+                    activeCardId === project.id
+                      ? 'grayscale-0 brightness-100'
+                      : 'grayscale brightness-75 group-hover:brightness-100 group-hover:grayscale-0'
+                  }`}
                 />
               </div>
               <div className="p-8">
