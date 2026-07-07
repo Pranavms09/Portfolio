@@ -120,7 +120,7 @@ export default function Contact() {
                     value={formState.name}
                     onChange={handleChange}
                     className="w-full bg-background neo-border p-4 text-body-md text-primary focus:outline-none focus:bg-surface-variant transition-all placeholder:text-zinc-600"
-                    placeholder="John Doe"
+                    placeholder="Ritesh Sharma"
                   />
                 </div>
                 <div>
@@ -135,7 +135,7 @@ export default function Contact() {
                     value={formState.email}
                     onChange={handleChange}
                     className="w-full bg-background neo-border p-4 text-body-md text-primary focus:outline-none focus:bg-surface-variant transition-all placeholder:text-zinc-600"
-                    placeholder="john@university.edu"
+                    placeholder="ritesh@university.edu"
                   />
                 </div>
               </div>
