@@ -39,7 +39,7 @@ const experiences = [
 
 const education = [
   {
-    degree: 'B.Tech — Computer Science & Information Technology',
+    degree: 'B.Tech — Computer Science And Engineering',
     institution: "PCET's Nutan Maharashtra Institute Of Engineering And Technology, Talegaon Dabhade (SPPU)",
     duration: 'Sep 2025 – Oct 2029',
     location: 'Pune',
