@@ -46,7 +46,7 @@ const education = [
     details: 'Relevant coursework: Data Structures & Algorithms, OOP, Web Technologies, Cloud Computing.',
   },
   {
-    degree: 'Higher Secondary (Science)',
+    degree: 'Primary Education',
     institution: 'Yogeshwari Nutan Vidyalaya, Ambajogai',
     duration: '2013 – 2023',
     location: 'Beed',
