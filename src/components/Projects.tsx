@@ -6,6 +6,16 @@ import ScrollReveal from '@/components/ScrollReveal';
 
 const projects = [
   {
+    id: 1,
+    title: 'ReThread',
+    description: 'AI-powered platform that matches donated clothing with local NGOs, reducing waste and shipping costs through hyperlocal micro-hubs.',
+    image: '/images/rethread.jpeg',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'qrcodejs', 'Vercel'],
+    linkText: 'GitHub Repository',
+    link: 'https://github.com/Pranavms09/ReThread',
+    isDoc: false,
+  },
+  {
     id: 2,
     title: 'LifePulse',
     description: 'Offline-ready healthcare platform for rural India featuring a 24/7 Gemini AI-powered bilingual assistant, hands-free voice interface, and camera-based medicine analyser.',
@@ -48,7 +58,7 @@ export default function Projects() {
                   src={project.image}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  priority={project.id === 2}
+                  priority={project.id === 1}
                   className={`object-cover transition-all duration-300 group-hover:scale-105 ${
                     activeCardId === project.id
                       ? 'grayscale-0 brightness-100'
