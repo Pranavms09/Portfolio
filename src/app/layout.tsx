@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,8 +28,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} dark scroll-smooth`}
     >
-      <head>
-        <script
+      <body className="bg-background text-on-background selection:bg-primary selection:text-background min-h-screen">
+        <Script
+          id="theme-script"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -44,8 +47,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className="bg-background text-on-background selection:bg-primary selection:text-background min-h-screen">
         {children}
       </body>
     </html>
