@@ -36,7 +36,7 @@ jobs:
         run: |
           aws s3 sync out/ s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
 
-      # Optional: Uncomment the following step if you set up CloudFront for your custom domain & SSL
-      # - name: Invalidate CloudFront Cache
-      #   run: |
-      #     aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ERI448YDX24JC --paths "/*"
+
